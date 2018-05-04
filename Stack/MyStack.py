@@ -1,4 +1,5 @@
 from List.SinglyLinkedList import SList
+import copy
 
 
 class Stack:
@@ -18,9 +19,6 @@ class Stack:
         return self.size == 0
 
     def push(self, item):
-        if self.is_empty():
-            self.top = self.Noe(item, self.)
-
         self.top = self.Node(item, self.top)
         self.size += 1
 
@@ -30,11 +28,25 @@ class Stack:
         else:
             n = self.top
             self.top = self.top.next
+            self.size -= 1
             return n.item
 
     def peek(self):
         if self.size != 0:
             return self.top.item
+
+    def __str__(self):
+        tmp = copy.deepcopy(self)
+        string = ""
+        for i in range(tmp.size):
+            item = tmp.top.item
+            if tmp.top.next is None:
+                string += str(item)
+                tmp.pop()
+            else:
+                string += str(item) + "->"
+                tmp.pop()
+        return string
 
 
 class EmptyError(Exception):
