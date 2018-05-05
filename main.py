@@ -1,6 +1,7 @@
 from List.DoublyLinkedList import DList
 import Stack.MyStack as stack
 import Queue.MyQueue as q
+import Queue.MyDequeue as dq
 import copy
 
 
@@ -64,3 +65,12 @@ if __name__ == '__main__':
     print("reverse: " + str(r))
     print(parentheses("{{(){()}}}"))
     print(is_palindrome("rer"))
+    print("=" * 50)
+    dq = dq.DeQueue()
+    dq.add_front(1)
+    dq.add_front(2)
+    dq.add_front(3)
+    dq.add_rear(1)
+    dq.add_rear(2)
+    dq.add_rear(3)
+    print(dq)
