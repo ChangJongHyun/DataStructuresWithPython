@@ -1,4 +1,3 @@
-from List.SinglyLinkedList import SList
 import copy
 
 
